@@ -3,206 +3,359 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
-
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
-  
-  <title>Title page</title>  
-
-<link href="./main.3da94fde.css" rel="stylesheet">
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jeff Attride | Projects</title>
+  <meta name="description" content="Jeff Attride's portfolio of projects including web development and software engineering work.">
+  <link rel="icon" href="./assets/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- <link href="./main.3da94fde.css" rel="stylesheet"> -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+    
+    .project-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    
+    .project-header {
+      background: linear-gradient(135deg, #007bff, #6610f2);
+      color: white;
+      padding: 20px 30px;
+      position: relative;
+    }
+    
+    .project-header h3 {
+      margin: 0;
+      font-weight: 600;
+    }
+    
+    .project-date {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    .project-body {
+      padding: 25px 30px;
+    }
+    
+    .project-image-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .project-image-container img {
+      width: 100%;
+      transition: transform 0.5s ease;
+    }
+    
+    .project-image-container:hover img {
+      transform: scale(1.03);
+    }
+    
+    .project-caption {
+      text-align: center;
+      font-style: italic;
+      color: #6c757d;
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+    
+    .tech-tag {
+      display: inline-block;
+      background-color: #e9ecef;
+      color: #495057;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      transition: background-color 0.2s ease;
+    }
+    
+    .tech-tag:hover {
+      background-color: #dee2e6;
+    }
+    
+    .github-btn {
+      background-color: #24292e;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      transition: background-color 0.2s ease;
+    }
+    
+    .github-btn:hover {
+      background-color: #000;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .github-btn i {
+      margin-right: 8px;
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 40px;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #007bff, #6610f2);
+    }
+    
+    .url-link {
+      color: #007bff;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      text-decoration: none;
+    }
+    
+    .url-link:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+    
+    .tech-section {
+      margin-top: 20px;
+    }
+    
+    .tech-title {
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #495057;
+    }
+    
+    .project-description {
+      line-height: 1.7;
+    }
+    
+    .project-page-header {
+      background: linear-gradient(135deg, #007bff, #6610f2);
+      color: white;
+      padding: 60px 0;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .project-page-title {
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .project-page-subtitle {
+      font-weight: 300;
+      opacity: 0.9;
+    }
+  </style>
 </head>
 
 <body>
 
- <!-- Add your content of header -->
-
-<header>
-  <nav class="navbar navbar-fixed-top navbar-default">
+  <header class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
-        <button type="button" class="navbar-toggle">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        
-      <nav class="navbar-fullscreen" id="navbar-middle">
-        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <ul class="navbar-fullscreen-links">
-          <li><a href="./index.html" title="">Home</a></li>
-          <li><a href="./project.html" title="">Project</a></li>
-          <li><a href="./about.html" title="">About me</a></li>
-          <li><a href="./gallery.html" title="">Gallery</a></li>
-<li><a href="http://blog.jattride.com" title="">Blog</a></li>
+      <a class="navbar-brand" href="#">Jeff Attride</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./project.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="./gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://blog.jattride.com">Blog</a></li>
         </ul>
-
-        <div class="footer-container">
-           
-  
-          <p class="footer-share-icons">
-              <a href="https://www.instagram.com/jeffride1" class="fa-icon" title="">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/jeff-attride-364b6b1b5/" class="fa-icon" title="">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-  
-          </p>
-                       
-        </div>
-
-
-      </nav> 
-    
+      </nav>
     </div>
-  </nav>
-</header>
+  </header>
 
   
 
 
-<div class="section-container">
+<!-- Project Page Header -->
+<div class="project-page-header">
   <div class="container">
-    <div class="row" style="border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-      padding-bottom: 2em;
-    ">
-      <div class="col-xs-12">
-        <div class="text-center section-container-spacer">
-          <h2>Project Work</h2>
-        </div>
-        <div class="row section-container-spacer">
-          <div class="col-md-4">
-              <div class="section-container-spacer">
-                <h3>Journalist Website</h3>
-                <p>April, 2024</p>
-                <p><a href="https://github.com/Jeffride/JournalistWebsite" class="btn btn-default btn-sm">Github</a></p>
-              </div>
+    <h1 class="project-page-title">My Projects</h1>
+    <p class="project-page-subtitle">A showcase of my development work and technical expertise</p>
+  </div>
+</div>
 
-              <h4>URL:</h4>
-              <a style="color:blue;" href="https://dattride.com">www.dattride.com</a></p>
-
-              <h4>Technologies:</h4>
-              <ul>
-                <li>Javascript</li>
-                <li>Html</li>
-                <li>CSS</li>
-                <li>S3</li>
-                <li>CloudFront</li>
-                <li>Route 53</li>
-                <li>Blogger Intergration</li>
-              </ul>
-          </div>
-          <div class="col-md-8">
-            <br>
-            <p>This commissioned project involved the design and development of a resilient, robust and custom built website for a scientific journalist. It serves as a central point for her publications along with key information around her achievements and qualifications. From a design perspective, she was incorporated at each stage of the process from conceptualisation to implementation. This resulted in a website that is tailor made and designed to reflect her requirements.
-            </p>
-              <p> 
-                From an Architecture standpoint, the following AWS Cloud services were used:
-                <ul>
-                  <li>S3</li>
-                  <li>CloudFront</li>
-                  <li>Route 53</li>
-                  <li>Amazon Certificate Manager</li>
-                </ul>
-            S3 was chosen as the hosting platform as it provides low cost static website hosting alongside image and file storage. The website is fronted by the AWS CloudFront CDN to provide low latency access by caching the website in edge locations close to the client. The domain "dattride.com" was obtained from Route 53 and the SSL cert used for website traffic encryption is from Amazon Certificate Manager.
-            </p>
-      
-          </div>
-        </div>
-
-
-        <img src="./assets/images/dawn1.png" alt="" class="img-responsive">
-        <p>Main landing page</p>
-        
-        <div class="row">
-            <div class="col-md-6">
-            <img src="./assets/images/dawnabout.png" class="img-responsive" alt="">
-            <p>About</p>
-            </div>
-            <div class="col-md-6">
-            <img src="./assets/images/dawnpub.png" class="img-responsive" alt="">
-            <p>Publications</p>
-            </div>
-        </div>
-<br>
-
-      </div>
-      <br>
+<div class="container py-5">
+  <!-- Journalist Website Project -->
+  <div class="project-card">
+    <div class="project-header">
+      <h3>Journalist Website</h3>
+      <div class="project-date">April, 2024</div>
     </div>
-
-
-<br>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="text-center section-container-spacer">
-       
-        </div>
-        <div class="row section-container-spacer">
-          <div class="col-md-4">
-              <div class="section-container-spacer">
-                <h3>"Lost in Cork"</h3>
-                <p>March, 2021</p>
-                <p><a href="https://github.com/Jeffride/TeamProject2021" class="btn btn-default btn-sm">Github</a></p>
-              </div>
-
-              <h4>Team:</h4>
-              <p>A group of 5 Computer Science students from University College Cork collaberated together on this project</p>
-
-              <h4>Technologies:</h4>
-              <ul>
-                <li>Python</li>
-                <li>Django framework</li>
-                <li>Bootstrap</li>
-                <li>MySQL</li>
-                <li>Google Maps API</li>
-              </ul>
-          </div>
-          <div class="col-md-8">
-
-            <p>This team software project involved the conceptualization, developement and thorough testing of a web-based application. After much deliberation, we came up with an idea for a geo-guessing game based in the city of Cork. If you have ever played the online game Geo-guessr, this may sound familiar. We decided to take this games concept and apply it to the city of cork with a few unique twists. For those not familiar with Geo-guessr, it is a game that places you in a random place in the world using google maps street view. You must then attempt to guess where abouts you have been placed. You gain points depending on how close to the actual locatin you were.</p>
-              <p> 
-                We planned a number of key aspects for this application:
-                <ul>
-                  <li>Main game mode</li>
-                  <li>Retro game mode</li>
-                  <li>Leaderboard</li>
-                  <li>Login/logout system</li>
-                </ul>
-            The main game mode interacted with the Google Maps API and was used to determine how close a user was to the actual location of the image presented on screen, see screenshot "Main game mode fig 1" for example. When calculating how close the user was to the correct location, the euclidian distance formula was applied to take into account the earth curvature. This gave the most accurate representation of distance between two points when using geographic locations.
-            </p>
-            <p>
-              Once a user had finished playing either of the two game modes, their score was uploaded to the leaderboard where they could check how well they did in comparision to other users. Each time a user revisited the application, they could log back in using their username and password in our secure login system.
-
-             </p>
+    <div class="project-body">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="project-description">
+            <p>This commissioned project involved the design and development of a resilient, robust and custom built website for a scientific journalist. It serves as a central point for her publications along with key information around her achievements and qualifications. From a design perspective, she was incorporated at each stage of the process from conceptualisation to implementation. This resulted in a website that is tailor made and designed to reflect her requirements.</p>
+            
+            <p>From an Architecture standpoint, the following AWS Cloud services were used:</p>
+            <ul>
+              <li>S3 was chosen as the hosting platform as it provides low cost static website hosting alongside image and file storage</li>
+              <li>The website is fronted by the AWS CloudFront CDN to provide low latency access by caching the website in edge locations close to the client</li>
+              <li>The domain "dattride.com" was obtained from Route 53</li>
+              <li>SSL certificate used for website traffic encryption is from Amazon Certificate Manager</li>
+            </ul>
           </div>
         </div>
-
-
-        <img src="./assets/images/lostInCork1.png" alt="" class="img-responsive">
-        <p>Main game mode fig1.</p>
         
-        <div class="row">
-            <div class="col-md-6">
-            <img src="./assets/images/lostInCorkRetro.png" class="img-responsive" alt="">
-            <p>Retro mode</p>
+        <div class="col-md-4">
+          <div class="mb-4">
+            <h5 class="tech-title">Website</h5>
+            <a href="https://dattride.com" class="url-link" target="_blank">www.dattride.com <i class="fas fa-external-link-alt"></i></a>
+          </div>
+          
+          <div class="mb-4">
+            <a href="https://github.com/Jeffride/JournalistWebsite" class="github-btn" target="_blank">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+          
+          <div class="tech-section">
+            <h5 class="tech-title">Technologies</h5>
+            <div>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">S3</span>
+              <span class="tech-tag">CloudFront</span>
+              <span class="tech-tag">Route 53</span>
+              <span class="tech-tag">Blogger Integration</span>
             </div>
-            <div class="col-md-6">
-            <img src="./assets/images/lostincorkhome.png" class="img-responsive" alt="">
-            <p>Home (landing) page</p>
-            </div>
+          </div>
         </div>
-
-
+      </div>
+      
+      <div class="mt-4">
+        <div class="project-image-container">
+          <img src="./assets/images/dawn1.png" alt="Journalist Website Main Landing Page" class="img-fluid">
+        </div>
+        <p class="project-caption">Main landing page</p>
+      </div>
+      
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="project-image-container">
+            <img src="./assets/images/dawnabout.png" alt="About Page" class="img-fluid">
+          </div>
+          <p class="project-caption">About page</p>
+        </div>
+        <div class="col-md-6">
+          <div class="project-image-container">
+            <img src="./assets/images/dawnpub.png" alt="Publications Page" class="img-fluid">
+          </div>
+          <p class="project-caption">Publications page</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Lost in Cork Project -->
+  <div class="project-card">
+    <div class="project-header">
+      <h3>"Lost in Cork"</h3>
+      <div class="project-date">March, 2021</div>
+    </div>
+    <div class="project-body">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="project-description">
+            <p>This team software project involved the conceptualization, development and thorough testing of a web-based application. After much deliberation, we came up with an idea for a geo-guessing game based in the city of Cork. If you have ever played the online game Geo-guessr, this may sound familiar. We decided to take this game's concept and apply it to the city of Cork with a few unique twists.</p>
+            
+            <p>For those not familiar with Geo-guessr, it is a game that places you in a random place in the world using Google Maps Street View. You must then attempt to guess where you have been placed. You gain points depending on how close to the actual location you were.</p>
+            
+            <p>We planned a number of key aspects for this application:</p>
+            <ul>
+              <li>Main game mode interacted with the Google Maps API to determine how close a user was to the actual location</li>
+              <li>Retro game mode offered a nostalgic alternative gameplay experience</li>
+              <li>Leaderboard system to track and display high scores</li>
+              <li>Secure login/logout system for user accounts</li>
+            </ul>
+            
+            <p>When calculating how close the user was to the correct location, the Euclidean distance formula was applied to take into account the Earth's curvature. This gave the most accurate representation of distance between two points when using geographic locations.</p>
+            
+            <p>Once a user had finished playing either of the two game modes, their score was uploaded to the leaderboard where they could check how well they did in comparison to other users. Each time a user revisited the application, they could log back in using their username and password in our secure login system.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="mb-4">
+            <h5 class="tech-title">Team</h5>
+            <p>A group of 5 Computer Science students from University College Cork collaborated on this project</p>
+          </div>
+          
+          <div class="mb-4">
+            <a href="https://github.com/Jeffride/TeamProject2021" class="github-btn" target="_blank">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+          
+          <div class="tech-section">
+            <h5 class="tech-title">Technologies</h5>
+            <div>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Django</span>
+              <span class="tech-tag">Bootstrap</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Google Maps API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-4">
+        <div class="project-image-container">
+          <img src="./assets/images/lostInCork1.png" alt="Lost in Cork Main Game Mode" class="img-fluid">
+        </div>
+        <p class="project-caption">Main game mode interface</p>
+      </div>
+      
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="project-image-container">
+            <img src="./assets/images/lostInCorkRetro.png" alt="Retro Mode" class="img-fluid">
+          </div>
+          <p class="project-caption">Retro game mode</p>
+        </div>
+        <div class="col-md-6">
+          <div class="project-image-container">
+            <img src="./assets/images/lostincorkhome.png" alt="Home Page" class="img-fluid">
+          </div>
+          <p class="project-caption">Home (landing) page</p>
+        </div>
       </div>
     </div>
   </div>
@@ -213,13 +366,27 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function (event) {
-      navbarToggleSidebar();
-      closeMenuBeforeGoingToPage();
-      navActivePage();
+  document.addEventListener("DOMContentLoaded", function() {
+    // Add active class to current page in navbar
+    const currentPage = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    
+    navLinks.forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if (linkHref === `./${currentPage}` || 
+          (currentPage === '' && linkHref === './index.html')) {
+        link.classList.add('active');
+      }
     });
-</script>
- <script type="text/javascript" src="./main.4c6e144e.js"></script></body>
+    
+    // Initialize any Bootstrap components
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+</script></body>
 
 </html>
