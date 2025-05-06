@@ -150,6 +150,16 @@
     .display-4 {
       font-weight: 400;
     }
+    @media only screen and (max-width: 600px){
+      #mainImg {
+        margin: auto;
+        text-align: center;
+        padding-bottom: 2em;
+      }
+      intro-section img {
+        width: 50%;
+      }
+    }
   </style>
 </head>
 
@@ -192,7 +202,7 @@
   <section class="py-5 intro-section">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-4">
+        <div class="col-md-4" id="mainImg">
           <img src="./assets/images/jeff.png" alt="Jeff Attride">
         </div>
         <div class="col-md-8">
